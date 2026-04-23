@@ -60,7 +60,7 @@ export async function analyzeContract(fileData: string, mimeType: string, fileNa
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-1.5-flash",
       contents: [
         {
           parts: [
@@ -109,7 +109,7 @@ export async function askQuestion(contractContext: any, question: string): Promi
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-1.5-flash",
       contents: prompt,
     });
     return response.text || "I'm sorry, I couldn't generate an answer for that.";
@@ -132,7 +132,7 @@ export async function translateText(text: string, targetLanguage: string): Promi
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-1.5-flash",
       contents: prompt,
     });
     return response.text || text;
@@ -161,7 +161,7 @@ export async function translateContractSections(sections: any[], targetLanguage:
 
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-1.5-flash",
       contents: prompt,
       config: { responseMimeType: "application/json" }
     });
